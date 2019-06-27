@@ -268,6 +268,10 @@ func (r *Runner) Run(ctx context.Context, id int64) error {
 			Target:   m.Build.Deploy,
 		},
 	)
+	
+	logger.Warnln("here")
+	logger.Warnln(r.Environ)
+
 	comp.TransformFunc = transform.Combine(
 		// transform.Include(),
 		// transform.Exclude(),
