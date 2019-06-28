@@ -555,7 +555,7 @@ func (r *Runner) poll(ctx context.Context) error {
 		},
 	)
 
-	logger.Debugln("runner: polling queue")
+	logger.Debugln("runner: polling queue1")
 	p, err := r.Manager.Request(ctx, &manager.Request{
 		Kind:    "pipeline",
 		Type:    "docker",
