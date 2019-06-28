@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package runner1
+package runner
 
 import (
 	"context"
@@ -173,6 +173,7 @@ func (r *Runner) Run(ctx context.Context, id int64) error {
 		systemEnviron(m.System),
 		linkEnviron(m.Repo, m.Build, m.System),
 		m.Build.Params,
+		r.Environ,
 	)
 
 	//
@@ -269,9 +270,6 @@ func (r *Runner) Run(ctx context.Context, id int64) error {
 		},
 	)
 	
-	logger.Warnln("here")
-	logger.Warnln(r.Environ)
-
 	comp.TransformFunc = transform.Combine(
 		// transform.Include(),
 		// transform.Exclude(),
